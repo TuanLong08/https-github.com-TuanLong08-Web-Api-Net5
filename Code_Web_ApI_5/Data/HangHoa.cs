@@ -25,5 +25,11 @@ namespace Code_Web_ApI_5.Data
         public int? MaLoai { get; set; }
         [ForeignKey("MaLoai")]
         public Loai Loai { get; set; }
+
+        public ICollection<DonHangChiTiet> donHangChiTiets { get; set; }
+        public HangHoa()
+        {
+            donHangChiTiets = new HashSet<DonHangChiTiet>();
+        }
     }
 }
