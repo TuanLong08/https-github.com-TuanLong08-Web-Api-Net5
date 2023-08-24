@@ -1,4 +1,5 @@
 using Code_Web_ApI_5.Data;
+using Code_Web_ApI_5.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAuthentication();
+builder.Services.AddScoped<ILoaiRepository, LoaiRespository>();
 builder.Services.AddDbContext<MyDbContext>(opt =>
 opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnect")));
 
